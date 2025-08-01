@@ -11,6 +11,8 @@ import Link from "next/link";
 import HomeProject from "../project/HomeProject";
 import Blog from "../Blog/Blogs";
 import CreateContact from "../contact/CreateContact";
+import AboutMe from "../about-me/AboutMe";
+import Education from "../Education/Educations";
 
 const HomeSectionPage = () => {
   const [projects, setProjects] = useState<TProject[]>([]);
@@ -35,6 +37,7 @@ const HomeSectionPage = () => {
   return (
     <NMContainer withDottedBackground>
       <Banner />
+      <AboutMe />
       <HomeProject projects={projects} />
       <div className="text-center mt-6">
         <Link href="/projects">
@@ -44,6 +47,7 @@ const HomeSectionPage = () => {
         </Link>
       </div>
       <SkillsSection />
+      <Education />
 
       <Blog blogs={blogs} />
 

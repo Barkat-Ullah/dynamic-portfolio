@@ -35,24 +35,24 @@ export function Banner() {
 
   const words = [
     {
-      text: "My",
+      text: "Full",
     },
     {
-      text: "Personal",
+      text: "Stack",
     },
     {
-      text: "Projects",
+      text: "MERN & PERN",
     },
     {
-      text: "Portfolio",
+      text: "Developer",
       className: "text-primary",
     },
   ];
 
-  const description = `I specialize in building modern web applications using the MERN Stack and Next.js. My focus is on creating scalable solutions with secure authentication and exceptional user experiences through Tailwind CSS & shadcn UI.`;
+  const description = `Passionate full stack developer specializing in the MERN stack ecosystem. I build scalable web applications from database design to responsive frontends, with expertise in server-side APIs, real-time features, and modern deployment strategies.`;
 
   return (
-    <div className="min-h-screen w-full py-12  md:py-12 lg:py-16 relative overflow-hidden">
+    <div className="min-h-screen w-full py-12 md:py-12 lg:py-16 relative overflow-hidden">
       {/* Enhanced blue background gradient */}
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-500/30 via-blue-400/10 to-background" />
 
@@ -62,29 +62,29 @@ export function Banner() {
       </div>
 
       <div className="container px-4 sm:px-6 relative">
-        {/* Status Badge - Repositioned higher on mobile */}
+        {/* Status Badge - Fixed positioning for mobile */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.5 }}
-          className="absolute top-0 sm:-top-6 right-4 md:right-0 z-10"
+          className="absolute top-4 sm:top-0 md:-top-6 right-4 md:right-0 z-20"
         >
           <Badge
             variant="outline"
-            className="group flex items-center gap-2 px-3 py-1.5 text-sm bg-background/80 backdrop-blur-sm border-blue-500/50 hover:border-blue-500"
+            className="group flex items-center gap-2 px-3 py-1.5 text-sm bg-background/90 backdrop-blur-sm border-blue-500/50 hover:border-blue-500 dark:bg-background/95 dark:border-blue-400/50 dark:hover:border-blue-400"
           >
-            <span className="relative flex h-2 w-2 ">
+            <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
             </span>
-            <span>Available for opportunities</span>
+            <span className="text-foreground">Available for opportunities</span>
           </Badge>
         </motion.div>
 
         {/* Main Content Section */}
         <div
           className={cn(
-            "flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12 lg:gap-16 transition-all duration-1000",
+            "flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12 lg:gap-16 transition-all duration-1000 pt-12 sm:pt-8 md:pt-0",
             animate ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           )}
         >
@@ -93,18 +93,18 @@ export function Banner() {
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="w-full md:w-1/2 text-center md:text-left order-2 md:order-1"
+            className="w-full md:w-1/2 text-left order-2 md:order-1"
           >
             {/* Heading with Gradient Text */}
-            <h1 className="relative z-10 mt-2 lg:mt-0 text-2xl md:text-4xl lg:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-400">
-              Full Stack Developer & MERN Specialist
+            <h1 className="relative z-10 mt-2 lg:mt-0 text-2xl md:text-4xl lg:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-400 dark:from-blue-400 dark:to-blue-300">
+              Full Stack Developer & MERN Stack Expert
             </h1>
 
             {/* Added Full Stack / MERN specialization text */}
-            <p className="text-sm md:text-base text-foreground/80 mb-4">
-              Building powerful web applications with React, Node.js, Express,
-              and MongoDB. Specializing in Next.js, TypeScript and modern UI
-              frameworks.
+            <p className="text-sm md:text-base text-foreground/80 dark:text-foreground/70 mb-4">
+              Crafting end-to-end web solutions with Postgresql, Prisma,
+              MongoDB, Express.js, React, and Node.js. Expertise in Next.js,
+              TypeScript, and modern development practices.
             </p>
 
             {/* Subheading with TypewriterEffect */}
@@ -116,16 +116,16 @@ export function Banner() {
             <div className="mb-8">
               <TextGenerateEffect
                 words={description}
-                className="text-foreground text-sm md:text-base relative z-10"
+                className="text-foreground dark:text-foreground/90 text-sm md:text-base relative z-10"
               />
             </div>
 
             {/* Buttons */}
-            <div className="flex flex-col sm:flex-row justify-center md:justify-start items-center gap-4 mb-8">
+            <div className="flex flex-col sm:flex-row justify-start items-start gap-4 mb-8">
               <Button
                 onClick={() => router.push("/projects")}
                 size="lg"
-                className="w-full sm:w-auto group relative overflow-hidden text-white bg-blue-600 hover:bg-blue-700"
+                className="w-full sm:w-auto group relative overflow-hidden text-white bg-blue-600 hover:bg-blue-700 dark:bg-blue-600 dark:hover:bg-blue-700"
               >
                 <span className="absolute inset-0 bg-gradient-to-r text-white from-blue-500 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <span className="relative flex items-center gap-2">
@@ -138,7 +138,7 @@ export function Banner() {
                 onClick={handleDownload}
                 variant="outline"
                 size="lg"
-                className="w-full sm:w-auto border-blue-500/50 hover:bg-blue-500/10 text-foreground"
+                className="w-full sm:w-auto border-blue-500/50 hover:bg-blue-500/10 text-foreground dark:border-blue-400/50 dark:hover:bg-blue-400/10"
               >
                 <span className="flex items-center gap-2">
                   <FaDownload className="text-lg" />
@@ -152,13 +152,13 @@ export function Banner() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8, duration: 0.5 }}
-              className="flex justify-center md:justify-start mt-4 gap-6"
+              className="flex justify-start mt-4 gap-6"
             >
               <Link
                 href="https://github.com/Barkat-Ullah"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-foreground hover:text-blue-500 transition-colors"
+                className="text-foreground hover:text-blue-500 dark:hover:text-blue-400 transition-colors"
               >
                 <FaGithub className="w-10 h-10" />
               </Link>
@@ -166,7 +166,7 @@ export function Banner() {
                 href="https://www.linkedin.com/in/barkat-ullah-1013b82a3/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-foreground hover:text-blue-500 transition-colors"
+                className="text-foreground hover:text-blue-500 dark:hover:text-blue-400 transition-colors"
               >
                 <FaLinkedin className="w-10 h-10" />
               </Link>

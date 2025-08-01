@@ -77,7 +77,6 @@ interface ProjectDetailsProps {
 }
 
 const ProjectDetailsCard: React.FC<ProjectDetailsProps> = ({ project }) => {
-  console.log(project);
   const [activeTab, setActiveTab] = useState("overview");
   const [isHovered, setIsHovered] = useState(false);
 
@@ -133,7 +132,7 @@ const ProjectDetailsCard: React.FC<ProjectDetailsProps> = ({ project }) => {
             "px-3 py-1.5 text-sm font-medium flex items-center gap-2",
             isIndividual
               ? "bg-blue-500/10 text-blue-500 border-blue-500/20"
-              : "bg-purple-500/10 text-purple-500 border-purple-500/20"
+              : "bg-blue-500/10 text-blue-500 border-blue-500/20"
           )}
         >
           {isIndividual ? (
@@ -187,7 +186,7 @@ const ProjectDetailsCard: React.FC<ProjectDetailsProps> = ({ project }) => {
                     "px-3 py-1 text-xs font-medium bg-background/80 backdrop-blur-sm flex items-center gap-1.5",
                     isIndividual
                       ? "border-blue-500/30 text-blue-500"
-                      : "border-purple-500/30 text-purple-500"
+                      : "border-blue-500/30 text-blue-500"
                   )}
                 >
                   {isIndividual ? (
@@ -210,8 +209,8 @@ const ProjectDetailsCard: React.FC<ProjectDetailsProps> = ({ project }) => {
               {/* Image container with animation */}
               <div className="aspect-video w-full relative">
                 <div
-                  className={`absolute inset-0 transition-transform duration-[5s] ease-linear ${
-                    isHovered ? "translate-y-[-50%]" : "translate-y-0"
+                  className={`absolute inset-0 transition-transform duration-[10s] ease-linear ${
+                    isHovered ? "translate-y-[-500%]" : "translate-y-0"
                   }`}
                 >
                   <Image
@@ -287,7 +286,7 @@ const ProjectDetailsCard: React.FC<ProjectDetailsProps> = ({ project }) => {
                   <Button
                     asChild
                     variant="default"
-                    className="w-full justify-start bg-blue-600 hover:bg-blue-700"
+                    className="w-full justify-start bg-blue-600 hover:bg-blue-700 text-white"
                     size="sm"
                   >
                     <Link
@@ -342,7 +341,7 @@ const ProjectDetailsCard: React.FC<ProjectDetailsProps> = ({ project }) => {
                     "p-3 rounded-lg border flex items-center gap-3",
                     isIndividual
                       ? "bg-blue-500/5 border-blue-500/20"
-                      : "bg-purple-500/5 border-purple-500/20"
+                      : "bg-blue-500/5 border-blue-500/20"
                   )}
                 >
                   {isIndividual ? (
@@ -350,7 +349,7 @@ const ProjectDetailsCard: React.FC<ProjectDetailsProps> = ({ project }) => {
                       <User
                         className={cn(
                           "h-5 w-5",
-                          isIndividual ? "text-blue-500" : "text-purple-500"
+                          isIndividual ? "text-blue-500" : "text-blue-500"
                         )}
                       />
                       <div>
@@ -362,7 +361,7 @@ const ProjectDetailsCard: React.FC<ProjectDetailsProps> = ({ project }) => {
                     </>
                   ) : (
                     <>
-                      <Users className="h-5 w-5 text-purple-500" />
+                      <Users className="h-5 w-5 text-blue-500" />
                       <div>
                         <div className="font-medium">Team Project</div>
                         <div className="text-xs text-muted-foreground">
@@ -449,7 +448,7 @@ const ProjectDetailsCard: React.FC<ProjectDetailsProps> = ({ project }) => {
                       </>
                     ) : (
                       <>
-                        <Users className="h-4 w-4 text-purple-500" />
+                        <Users className="h-4 w-4 text-blue-500" />
                         <span>Team Project</span>
                       </>
                     )}
@@ -529,7 +528,7 @@ const ProjectDetailsCard: React.FC<ProjectDetailsProps> = ({ project }) => {
                       "ml-2",
                       isIndividual
                         ? "bg-blue-500/10 text-blue-500 border-blue-500/20"
-                        : "bg-purple-500/10 text-purple-500 border-purple-500/20"
+                        : "bg-blue-500/10 text-blue-500 border-blue-500/20"
                     )}
                   >
                     {project.type}
@@ -540,7 +539,7 @@ const ProjectDetailsCard: React.FC<ProjectDetailsProps> = ({ project }) => {
                     "p-6 rounded-lg border",
                     isIndividual
                       ? "border-blue-500/20 bg-blue-500/5"
-                      : "border-purple-500/20 bg-purple-500/5"
+                      : "border-blue-500/20 bg-blue-500/5"
                   )}
                 >
                   <p className="text-foreground leading-relaxed">
@@ -567,7 +566,11 @@ const ProjectDetailsCard: React.FC<ProjectDetailsProps> = ({ project }) => {
       {/* Call to action */}
       <div className="mt-12 pt-6 border-t border-border">
         <div className="flex flex-col sm:flex-row gap-4">
-          <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700">
+          <Button
+            asChild
+            size="lg"
+            className="bg-blue-600 hover:bg-blue-700 text-white"
+          >
             <Link href={project.link} target="_blank" rel="noopener noreferrer">
               <ExternalLink className="mr-2 h-4 w-4" />
               View Live Project
